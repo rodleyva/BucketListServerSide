@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502E9DF32725743600900E4E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E9DF22725743600900E4E /* TaskModel.swift */; };
 		5037AD4127145FBF009D9100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4027145FBF009D9100 /* AppDelegate.swift */; };
 		5037AD4327145FBF009D9100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4227145FBF009D9100 /* SceneDelegate.swift */; };
 		5037AD4527145FBF009D9100 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4427145FBF009D9100 /* TableViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502E9DF22725743600900E4E /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		5037AD3D27145FBF009D9100 /* BucketListLearnPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketListLearnPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5037AD4027145FBF009D9100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5037AD4227145FBF009D9100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				5037AD4027145FBF009D9100 /* AppDelegate.swift */,
 				5037AD4227145FBF009D9100 /* SceneDelegate.swift */,
 				5037AD4427145FBF009D9100 /* TableViewController.swift */,
+				502E9DF22725743600900E4E /* TaskModel.swift */,
 				504F2C5A271EE2B600788722 /* Tasks.swift */,
 				5037AD5727146361009D9100 /* SecondTableViewController.swift */,
 				5037AD4627145FBF009D9100 /* Main.storyboard */,
@@ -161,6 +164,7 @@
 				5037AD4127145FBF009D9100 /* AppDelegate.swift in Sources */,
 				504F2C5B271EE2B600788722 /* Tasks.swift in Sources */,
 				5037AD4327145FBF009D9100 /* SceneDelegate.swift in Sources */,
+				502E9DF32725743600900E4E /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

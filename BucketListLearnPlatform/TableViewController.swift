@@ -7,12 +7,14 @@
 
 import UIKit
 import Alamofire
+import CloudKit
+
 
 
 
 class TableViewController: UITableViewController {
     
-    var items = [Tasks]()
+    var items = [AddTask]()
     
 
     override func viewDidLoad() {
@@ -90,140 +92,76 @@ class TableViewController: UITableViewController {
     
     // create item to core data
     func addItem(text: String){
-        //creating context
-        //let context = getUpdatedContext()
-        //creating a new item
-        //let item = BucketListItem.init(context: context)
-        let item = Tasks(id: UUID(), createdAt: Date(), objective: text)
-        // setting the item's text
-        // appending item to our list so it shows
-        // on the table view
-        items.append(item)
         
-        let encoder = JSONParameterEncoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        encoder.encoder.dateEncodingStrategy = .formatted(dateFormatter)
+        let item = AddTask(objective: text)
         
-        AF.request("http://127.0.0.1:8080/tasks", method: .post, parameters: item, encoder: encoder).response { response in
-            
-            debugPrint(response)
+        TaskModel.createTask(parameters: item) { error in
+            if let error = error {
+                print("Error:\(error.localizedDescription)")
+                // show user an error
+            }
         }
         
-        //make api call
         
-//        do{
-//            //finally saving the context so the item
-//            //is persisted
-//            try context.save()
-//        }catch{
-//            print(error.localizedDescription)
-//        }
+        items.append(item)
+        self.tableView.reloadData()
+        
+        
         
     }
     // read item from core data
     func fetchAllItems(){
         // make API call
         
-        AF.request("http://127.0.0.1:8080/tasks", method: .get).responseJSON{ response in
-            
-            if let data = response.data{
-                let decoder = JSONDecoder()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                
-                let items = try! decoder.decode([Tasks].self, from: data)
-                
+        TaskModel.getAllTask { taskModel, error in
+            if let error = error{
+                print(error.localizedDescription)
+                //show the user an error
+                return
+            }
+            if let taskModel = taskModel {
                 DispatchQueue.main.async {
-                    self.items = items
+                    self.items = taskModel
                     self.tableView.reloadData()
                 }
-                
             }
-           
-            
         }
         
-        
-//        let context = getUpdatedContext()
-//        let itemRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "BucketListItem")
-        
-//        do{
-//            let results = try context.fetch(itemRequest)
-//            items = results as! [BucketListItem]
-//        }catch{
-//            print(error.localizedDescription)
-//        }
 
     }
     // update data from core data
     func updateItem(text: String, path: Int){
         
-//        let context = getUpdatedContext()
-        items[path].objective = text
-        
         guard let id = items[path].id else {return}
         
-        let encoder = JSONParameterEncoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        encoder.encoder.dateEncodingStrategy = .formatted(dateFormatter)
         
-        AF.request("http://127.0.0.1:8080/tasks/\(id)", method: .post, parameters: items[path], encoder: encoder).response{ reponse in
-            
-            switch reponse.result{
-            case .success(_):
-                print(reponse.response?.statusCode)
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.createAlert(title: "Error", message: "There was an error updating your note on the server \(error.localizedDescription)")
-                }
+        items[path].objective = text
+        
+        TaskModel.updateTask(with: id, parameters: items[path]) { error in
+            if let error = error{
+                print(error.localizedDescription)
+                //Show user an error
             }
             
         }
-        
-//        do{
-//            try context.save()
-//        }catch{
-//            print(error.localizedDescription)
-//        }
+        tableView.reloadData()
         
         
     }
     //delete item from core data
     func deleteItem(path: Int){
-        //let context = getUpdatedContext()
-        
-        //context.delete(items[path])
-        
         
         guard let id = items[path].id else {return}
         
-        
-        
-        
-        AF.request("http://127.0.0.1:8080/tasks/\(id)", method: .delete).response{ response in
-            
-            switch response.result{
-            case .success(_):
-                DispatchQueue.main.async {
-                    self.items.remove(at: path)
-                    self.tableView.reloadData()
-                    self.createAlert(title: "Success", message: "Succesfully delete note from server")
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.createAlert(title: "Error could not delte note", message: error.localizedDescription)
-                }
+        TaskModel.deleteTask(with: id) { error in
+            if let error = error {
+                //TEll user there's an error deleting
+                print(error.localizedDescription)
             }
         }
         
-//        do{
-//            try context.save()
-//        }catch{
-//            print(error.localizedDescription)
-//        }
+        self.items.remove(at: path)
+        self.tableView.reloadData()
         
         
     }
