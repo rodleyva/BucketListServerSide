@@ -10,14 +10,11 @@
 		502E9DF32725743600900E4E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502E9DF22725743600900E4E /* TaskModel.swift */; };
 		5037AD4127145FBF009D9100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4027145FBF009D9100 /* AppDelegate.swift */; };
 		5037AD4327145FBF009D9100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4227145FBF009D9100 /* SceneDelegate.swift */; };
-		5037AD4527145FBF009D9100 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4427145FBF009D9100 /* TableViewController.swift */; };
+		5037AD4527145FBF009D9100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4427145FBF009D9100 /* ViewController.swift */; };
 		5037AD4827145FBF009D9100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5037AD4627145FBF009D9100 /* Main.storyboard */; };
 		5037AD4B27145FBF009D9100 /* BucketListLearnPlatform.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD4927145FBF009D9100 /* BucketListLearnPlatform.xcdatamodeld */; };
 		5037AD4D27145FC7009D9100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5037AD4C27145FC7009D9100 /* Assets.xcassets */; };
 		5037AD5027145FC7009D9100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5037AD4E27145FC7009D9100 /* LaunchScreen.storyboard */; };
-		5037AD5827146361009D9100 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AD5727146361009D9100 /* SecondTableViewController.swift */; };
-		504F2C59271EDDAD00788722 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 504F2C58271EDDAD00788722 /* Alamofire */; };
-		504F2C5B271EE2B600788722 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F2C5A271EE2B600788722 /* Tasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,14 +22,12 @@
 		5037AD3D27145FBF009D9100 /* BucketListLearnPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketListLearnPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5037AD4027145FBF009D9100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5037AD4227145FBF009D9100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5037AD4427145FBF009D9100 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5037AD4427145FBF009D9100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5037AD4727145FBF009D9100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5037AD4A27145FBF009D9100 /* BucketListLearnPlatform.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketListLearnPlatform.xcdatamodel; sourceTree = "<group>"; };
 		5037AD4C27145FC7009D9100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5037AD4F27145FC7009D9100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5037AD5127145FC7009D9100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5037AD5727146361009D9100 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
-		504F2C5A271EE2B600788722 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504F2C59271EDDAD00788722 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,10 +62,14 @@
 			children = (
 				5037AD4027145FBF009D9100 /* AppDelegate.swift */,
 				5037AD4227145FBF009D9100 /* SceneDelegate.swift */,
+<<<<<<< HEAD
 				5037AD4427145FBF009D9100 /* TableViewController.swift */,
 				502E9DF22725743600900E4E /* TaskModel.swift */,
 				504F2C5A271EE2B600788722 /* Tasks.swift */,
 				5037AD5727146361009D9100 /* SecondTableViewController.swift */,
+=======
+				5037AD4427145FBF009D9100 /* ViewController.swift */,
+>>>>>>> parent of f87d113 (First commit)
 				5037AD4627145FBF009D9100 /* Main.storyboard */,
 				5037AD4C27145FC7009D9100 /* Assets.xcassets */,
 				5037AD4E27145FC7009D9100 /* LaunchScreen.storyboard */,
@@ -97,9 +95,6 @@
 			dependencies = (
 			);
 			name = BucketListLearnPlatform;
-			packageProductDependencies = (
-				504F2C58271EDDAD00788722 /* Alamofire */,
-			);
 			productName = BucketListLearnPlatform;
 			productReference = 5037AD3D27145FBF009D9100 /* BucketListLearnPlatform.app */;
 			productType = "com.apple.product-type.application";
@@ -128,9 +123,6 @@
 				Base,
 			);
 			mainGroup = 5037AD3427145FBF009D9100;
-			packageReferences = (
-				504F2C57271EDDAD00788722 /* XCRemoteSwiftPackageReference "Alamofire" */,
-			);
 			productRefGroup = 5037AD3E27145FBF009D9100 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,11 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5037AD4527145FBF009D9100 /* TableViewController.swift in Sources */,
+				5037AD4527145FBF009D9100 /* ViewController.swift in Sources */,
 				5037AD4B27145FBF009D9100 /* BucketListLearnPlatform.xcdatamodeld in Sources */,
-				5037AD5827146361009D9100 /* SecondTableViewController.swift in Sources */,
 				5037AD4127145FBF009D9100 /* AppDelegate.swift in Sources */,
-				504F2C5B271EE2B600788722 /* Tasks.swift in Sources */,
 				5037AD4327145FBF009D9100 /* SceneDelegate.swift in Sources */,
 				502E9DF32725743600900E4E /* TaskModel.swift in Sources */,
 			);
@@ -384,25 +374,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		504F2C57271EDDAD00788722 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		504F2C58271EDDAD00788722 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 504F2C57271EDDAD00788722 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5037AD4927145FBF009D9100 /* BucketListLearnPlatform.xcdatamodeld */ = {
